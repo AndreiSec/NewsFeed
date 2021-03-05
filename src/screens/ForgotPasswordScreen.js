@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Background from '../components/Background'
 import BackButton from '../components/BackButton'
-import Logo from '../components/Logo'
+import Logo_N from '../components/Logo_N'
 import Header from '../components/Header'
 import TextInput from '../components/TextInput'
 import Button from '../components/Button'
@@ -22,7 +22,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
   return (
     <Background>
       <BackButton goBack={navigation.goBack} />
-      <Logo />
+      <Logo_N />
       <Header>Restore Password</Header>
       <TextInput
         label="E-mail address"

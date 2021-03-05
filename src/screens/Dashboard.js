@@ -1,13 +1,13 @@
 import React from 'react'
 import Background from '../components/Background'
-import Logo from '../components/Logo'
+import Logo_N from '../components/Logo_N'
 import Header from '../components/Header'
 import Paragraph from '../components/Paragraph'
 import Button from '../components/Button'
 
 const Dashboard = ({ navigation }) => (
   <Background>
-    <Logo />
+    <Logo_N />
     <Header>Let’s start</Header>
     <Paragraph>
       Your amazing app starts here. Open you favorite code editor and start
