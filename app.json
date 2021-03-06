@@ -4,11 +4,11 @@
     "slug": "NewsFeed",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/logos/LOGO_N_300.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/logos/LOGO_N_3000.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FF8745"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -26,7 +26,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/assets/logos/LOGO_N_300.png"
     }
   }
 }

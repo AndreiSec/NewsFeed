@@ -2,7 +2,7 @@ import React from 'react'
 import {Image, StyleSheet } from 'react-native'
 
 const Logo_N = () => (
-  <Image source={require('../assets/logos/LOGO_N.png')} style={styles.image} />
+  <Image source={require('../assets/logos/LOGO_N_300.png')} style={styles.image} />
 )
 
 const styles = StyleSheet.create({

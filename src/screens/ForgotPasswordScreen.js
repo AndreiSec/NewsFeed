@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Background from '../components/Background'
+import {BackgroundPaper, BackgroundDots} from '../components/Background'
 import BackButton from '../components/BackButton'
 import Logo_N from '../components/Logo_N'
 import Header from '../components/Header'
@@ -20,7 +20,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
   }
 
   return (
-    <Background>
+    <BackgroundDots>
       <BackButton goBack={navigation.goBack} />
       <Logo_N />
       <Header>Restore Password</Header>
@@ -44,7 +44,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
       >
         Send Instructions
       </Button>
-    </Background>
+    </BackgroundDots>
   )
 }
 

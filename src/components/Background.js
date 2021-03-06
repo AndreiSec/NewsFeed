@@ -1,8 +1,26 @@
 import React from 'react'
 import { ImageBackground, StyleSheet, KeyboardAvoidingView } from 'react-native'
 import { theme } from '../core/theme'
+import styled from 'styled-components'
+import vectorRight from '../assets/background/orangeVectorRight.svg'
+import vectorLeft from '../assets/background/orangeVectorLeft.svg'
+import Svg, { Path } from 'react-native-svg'
 
-const Background = ({ children }) => (
+
+const BackgroundPaper = ({ children }) => (
+  <ImageBackground
+    source={require('../assets/background/newspapers.jpg')}
+    resizeMode="repeat"
+    style={styles.background}
+    imageStyle={{opacity: 0.3}}
+  >
+    <KeyboardAvoidingView style={styles.container} behavior="padding">
+      {children}
+    </KeyboardAvoidingView>
+  </ImageBackground>
+)
+
+const BackgroundDots = ({ children }) => (
   <ImageBackground
     source={require('../assets/background_dot.png')}
     resizeMode="repeat"
@@ -14,10 +32,12 @@ const Background = ({ children }) => (
   </ImageBackground>
 )
 
+
 const styles = StyleSheet.create({
   background: {
     flex: 1,
     width: '100%',
+    resizeMode: 'cover',
     backgroundColor: theme.colors.surface,
   },
   container: {
@@ -31,4 +51,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Background
+export{BackgroundPaper, BackgroundDots}

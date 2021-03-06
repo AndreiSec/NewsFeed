@@ -4,7 +4,7 @@ import { View, Image, StyleSheet } from 'react-native'
 const Logo_newsfeed = () => (
   <View style={styles.logoBar}>
     <View style={styles.containerStyle}>
-  <Image source={require('../assets/logos/LOGO_N.png')} style={styles.Logo_N} />
+  <Image source={require('../assets/logos/LOGO_N_300.png')} style={styles.Logo_N} />
 </View>
 <View>
   <Image source={require('../assets/logos/LOGO_EWSFEED.png')} style={styles.Logo_EWSFEED} />
