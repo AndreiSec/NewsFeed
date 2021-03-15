@@ -1,10 +1,7 @@
 import React from 'react'
 import { ImageBackground, StyleSheet, KeyboardAvoidingView } from 'react-native'
 import { theme } from '../core/theme'
-import styled from 'styled-components'
-import vectorRight from '../assets/background/orangeVectorRight.svg'
-import vectorLeft from '../assets/background/orangeVectorLeft.svg'
-import Svg, { Path } from 'react-native-svg'
+
 
 
 const BackgroundPaper = ({ children }) => (

@@ -1,12 +1,12 @@
 import React from 'react'
-import Background1 from '../components/Background'
+import {BackgroundPaper, BackgroundDots} from '../components/Background'
 import Logo_N from '../components/Logo_N'
 import Header from '../components/Header'
 import Paragraph from '../components/Paragraph'
 import Button from '../components/Button'
 
 const Dashboard = ({ navigation }) => (
-  <Background1>
+  <BackgroundDots>
     <Logo_N />
     <Header>Let’s start</Header>
     <Paragraph>
@@ -24,7 +24,7 @@ const Dashboard = ({ navigation }) => (
     >
       Logout
     </Button>
-  </Background1>
+  </BackgroundDots>
 )
 
 export default Dashboard
