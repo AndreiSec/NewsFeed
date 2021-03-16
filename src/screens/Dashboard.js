@@ -4,6 +4,7 @@ import Logo_N from '../components/Logo_N'
 import Header from '../components/Header'
 import Paragraph from '../components/Paragraph'
 import Button from '../components/Button'
+import LogoutButton from '../components/LogoutButton'
 
 const Dashboard = ({ navigation }) => (
   <BackgroundDots>
@@ -13,17 +14,10 @@ const Dashboard = ({ navigation }) => (
       Your amazing app starts here. Open you favorite code editor and start
       editing this project.
     </Paragraph>
-    <Button
-      mode="outlined"
-      onPress={() =>
-        navigation.reset({
-          index: 0,
-          routes: [{ name: 'StartScreen' }],
-        })
-      }
-    >
-      Logout
-    </Button>
+    <LogoutButton nav = {navigation}>
+      
+    </LogoutButton>
+
   </BackgroundDots>
 )
 

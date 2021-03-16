@@ -10,12 +10,15 @@ import BackButton from '../components/BackButton'
 import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
+import { loginFunction } from '../helpers/backendConnection'
+import {tokenInsertLocalStorage} from '../helpers/localstorage'
+
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
-  const onLoginPressed = () => {
+  const onLoginPressed = async () => {
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
 
@@ -24,10 +27,28 @@ const LoginScreen = ({ navigation }) => {
       setPassword({ ...password, error: passwordError })
       return
     }
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Dashboard' }],
-    })
+
+    const loginData = 
+    {email: email.value,
+      password: password.value
+    }
+
+
+    loginResult = await loginFunction(loginData);
+
+    console.log("In login function: " + JSON.stringify(loginResult))
+    if(loginResult.success){
+      tokenInsertLocalStorage(loginResult.token)
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Dashboard' }],
+      });
+      console.log("Successful Login")
+    }
+    else{
+      alert(loginResult.message)
+    }
+    
   }
 
   return (

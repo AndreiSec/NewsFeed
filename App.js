@@ -10,15 +10,26 @@ import {
   ForgotPasswordScreen,
   Dashboard,
 } from './src/screens'
+import {tokenInsertLocalStorage,tokenInLocalStorage} from './src/helpers/localstorage'
 
 const Stack = createStackNavigator()
 
+
+
 const App = () => {
+const isLoggedIn =  tokenInLocalStorage();
+console.log("Is logged in already? " + JSON.stringify(isLoggedIn))
+let screenToOpen = "DashBoard"
+
+if(isLoggedIn){
+  screenToOpen = "DashBoard"
+}
+
   return (
     <Provider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="StartScreen"
+          initialRouteName={screenToOpen}
           screenOptions={{
             headerShown: false,
           }}

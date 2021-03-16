@@ -11,13 +11,15 @@ import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import { nameValidator } from '../helpers/nameValidator'
+import { registerFunction } from '../helpers/backendConnection'
+import {tokenInsertLocalStorage} from '../helpers/localstorage'
 
 const RegisterScreen = ({ navigation }) => {
   const [name, setName] = useState({ value: '', error: '' })
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
-  const onSignUpPressed = () => {
+    const onSignUpPressed = async() => {
     const nameError = nameValidator(name.value)
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
@@ -27,10 +29,26 @@ const RegisterScreen = ({ navigation }) => {
       setPassword({ ...password, error: passwordError })
       return
     }
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Dashboard' }],
-    })
+    const registerData = 
+    {userName: name.value,
+      email: email.value,
+      password: password.value
+    }
+    
+    registerResult = await registerFunction(registerData);
+
+    if(registerResult.success){
+      tokenInsertLocalStorage(registerResult.token)
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Dashboard' }],
+      })
+      console.log("Registration successful");
+    }
+    else{
+      alert(registerResult.message)
+    }
+    
   }
 
   return (
