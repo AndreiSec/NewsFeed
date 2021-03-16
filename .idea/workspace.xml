@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="44f1267c-24ea-41eb-bde4-056ea6260c8f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,17 +42,17 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="694" y="182" width="992" height="722" key="AVDManager" timestamp="1614973555109">
+    <state x="694" y="182" width="992" height="722" key="AVDManager" timestamp="1615910977254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="694" y="182" width="992" height="722" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1614973555109" />
+    <state x="694" y="182" width="992" height="722" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1615910977254" />
     <state x="691" y="188" key="SettingsEditor" timestamp="1614299145167">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="691" y="188" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1614299145167" />
-    <state x="846" y="254" key="run.anything.popup" timestamp="1614297826882">
+    <state x="846" y="254" key="run.anything.popup" timestamp="1615910856173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="846" y="254" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614297826882" />
+    <state x="846" y="254" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615910856173" />
   </component>
 </project>

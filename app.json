@@ -4,9 +4,9 @@
     "slug": "NewsFeed",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/logos/LOGO_N_300.png",
+    "icon": "./src/assets/splash/LOGO_N_IOSicon.png",
     "splash": {
-      "image": "./src/assets/logos/LOGO_N_3000.png",
+      "image": "./src/assets/splash/LOGO_N_SPLASH.png",
       "resizeMode": "contain",
       "backgroundColor": "#FF8745"
     },
@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./src/assets/splash/LOGO_N_ANDROID_ICON.png",
         "backgroundColor": "#FFFFFF"
       }
     },
