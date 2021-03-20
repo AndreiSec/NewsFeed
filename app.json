@@ -7,7 +7,7 @@
     "icon": "./src/assets/splash/LOGO_N_IOSicon.png",
     "splash": {
       "image": "./src/assets/splash/LOGO_N_SPLASH.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#FF8745"
     },
     "updates": {
