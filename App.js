@@ -1,23 +1,8 @@
 import React from "react";
-import { Provider } from "react-native-paper";
 
-import { createStackNavigator } from "@react-navigation/stack";
 import { theme } from "./src/core/theme";
-import {
-  StartScreen,
-  LoginScreen,
-  RegisterScreen,
-  ForgotPasswordScreen,
-  Dashboard,
-  AppSplashScreen,
-  SettingsPage,
-} from "./src/screens";
-import {
-  tokenInsertLocalStorage,
-  tokenInLocalStorage,
-} from "./src/helpers/localstorage";
-import * as SplashScreen from "expo-splash-screen";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { tokenInLocalStorage } from "./src/helpers/localstorage";
+
 import { AuthContext } from "./src/core/context";
 import { AuthStackScreen, AppDrawerScreen } from "./src/core/routes";
 import { NavigationContainer } from "@react-navigation/native";
@@ -49,14 +34,13 @@ export default function App() {
     const getData = async () => {
       try {
         isLoggedIn = await tokenInLocalStorage();
-
-        if (isLoggedIn) {
-          setUserTokenPresent(true);
-        }
-        console.log("Is logged in already? " + userTokenPresent);
+        console.log("isLoggedIn variable: " + isLoggedIn);
       } catch (e) {
         console.warn(e);
       } finally {
+        if (isLoggedIn == true) {
+          setUserTokenPresent(true);
+        }
         setIsReady(true);
         // this.setState({ appIsReady: true }, async () => {
         //   await SplashScreen.hideAsync();
@@ -64,6 +48,7 @@ export default function App() {
       }
     };
     getData();
+
     return () => null;
   }, []);
   // async componentDidMount() {
@@ -97,7 +82,7 @@ export default function App() {
   // };
 
   if (!appIsReady) {
-    return <AppSplashScreen></AppSplashScreen>;
+    return null;
   }
   return (
     <AuthContext.Provider theme={theme} value={authContext}>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {BackgroundPaper, BackgroundDots} from '../components/Background'
+import {BackgroundDots} from '../components/Background'
 import BackButton from '../components/BackButton'
 import Logo_N from '../components/Logo_N'
 import Header from '../components/Header'

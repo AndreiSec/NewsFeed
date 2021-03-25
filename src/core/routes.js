@@ -1,7 +1,6 @@
 // app/router.js
 
 import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, useLinkProps } from "@react-navigation/native";
 import React from "react";
 import {
   StartScreen,
@@ -11,7 +10,9 @@ import {
   Dashboard,
   SettingsPage,
 } from "../screens";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Octicons } from "@expo/vector-icons";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { theme } from "./theme";
 
 const AuthStack = createStackNavigator();
 
@@ -41,18 +42,38 @@ export const AuthStackScreen = () => (
   </AuthStack.Navigator>
 );
 
-const AppTabStack = createBottomTabNavigator();
+const AppTabStack = createMaterialBottomTabNavigator();
 
 export const AppDrawerScreen = () => (
   <AppTabStack.Navigator
+    initialRouteName="Dashboard"
+    labeled={false}
+    activeColor={theme.colors.orange}
+    inactiveColor={theme.colors.cream}
     screenOptions={{
       headerShown: false,
     }}
+    barStyle={{ backgroundColor: theme.colors.grey }}
   >
-    <AppTabStack.Screen name="Dashboard" component={Dashboard} />
     <AppTabStack.Screen
-      name="SettingsPage"
+      name="Dashboard"
+      component={Dashboard}
+      options={{
+        tabBarLabel: "Dash",
+        tabBarIcon: ({ color }) => (
+          <Octicons name="home" color={color} size={26} />
+        ),
+      }}
+    />
+    <AppTabStack.Screen
+      name="Settings"
       component={SettingsPage}
+      options={{
+        tabBarLabel: "Dash",
+        tabBarIcon: ({ color }) => (
+          <Octicons name="settings" color={color} size={26} />
+        ),
+      }}
       //   updateLoginState={props.updateLoginState}
     />
   </AppTabStack.Navigator>

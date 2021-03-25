@@ -1,10 +1,9 @@
 import React from "react";
-import { BackgroundPaper, BackgroundDots } from "../components/Background";
+import { BackgroundDots } from "../components/Background";
 import Logo_N from "../components/Logo_N";
 import Header from "../components/Header";
 import Paragraph from "../components/Paragraph";
 import Button from "../components/Button";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import { AuthContext } from "../core/context";
 import { theme } from "../core/theme";
 import { logoutFunction } from "../helpers/backendConnection";

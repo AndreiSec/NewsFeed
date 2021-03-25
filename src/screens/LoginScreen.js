@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TouchableOpacity, StyleSheet, View } from "react-native";
 import { Text } from "react-native-paper";
-import { BackgroundPaper, BackgroundDots } from "../components/Background";
+import { BackgroundDots } from "../components/Background";
 import Logo_N from "../components/Logo_N";
 import Header from "../components/Header";
 import Button from "../components/Button";
