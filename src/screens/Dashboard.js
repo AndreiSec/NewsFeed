@@ -9,32 +9,50 @@ import { useEffect } from "react";
 import { NewsTypeContext } from "../core/NewsTypeContext";
 import { theme } from "../core/theme";
 import DropDownSelector from "../components/DropDownPicker";
-import Logo_newsfeed from "../components/Logo_newsfeed";
+import Logo_newsfeed_small from "../components/Logo_newsfeed_small";
+import { StatusBar } from "react-native";
+import { newsFetchAPI } from "../helpers/newsFetcherApi";
 
 const Dashboard = ({ navigation }) => {
   const [newsType, setNewsType] = React.useState("WORLD");
 
   const newsTypeContext = React.useMemo(() => ({
     updateNewsType: (newsSelection) => {
-      console.log("News Type: " + newsSelection);
+      // console.log("News Type: " + newsSelection);
       setNewsType(newsSelection);
+      getData();
     },
   }));
 
+  const getData = async () => {
+    try {
+      newsFetchAPI(newsType);
+      console.log("Updated state: " + newsType);
+    } catch (e) {
+      console.warn(e);
+    } finally {
+    }
+  };
+
   useEffect(() => {
+    getData();
     return () => null;
   }, []);
 
   return (
     <NewsTypeContext.Provider theme={theme} value={newsTypeContext}>
+      <StatusBar
+        barStyle="dark-content"
+        hidden={false}
+        backgroundColor={theme.colors.orange}
+        translucent={true}
+      />
       <BackgroundDots>
         <SafeAreaView>
           <View style={styles.bar}>
-            <Logo_newsfeed />
+            <Logo_newsfeed_small />
           </View>
-
           <DropDownSelector />
-
           <NewsList />
         </SafeAreaView>
       </BackgroundDots>
@@ -44,9 +62,9 @@ const Dashboard = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   bar: {
-    resizeMode: "cover",
-    paddingTop: 50,
-    flexDirection: "row",
+    paddingTop: 30,
+    paddingBottom: 20,
+    flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
   },

@@ -11,6 +11,7 @@ import {
   readTokenInLocalStorage,
   deleteAuthToken,
 } from "../helpers/localstorage";
+import { StatusBar } from "react-native";
 
 const SettingsPage = ({ navigation }) => {
   const { signOut } = React.useContext(AuthContext);
