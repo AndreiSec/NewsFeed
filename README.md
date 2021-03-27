@@ -8,7 +8,7 @@ NewsFeed is a web application that allows users to scroll through news titles fr
 Users can create accounts and create settings that will transist between web browser and phone.
 
 ## How I made it
-NewsFeed is a MERN application. I created the front end using React Native, and backend was done in an Node.js Express server (also on my github) connected to MongoDB hosted on AWS via Mongoose.
+NewsFeed is a MERN application. I created the front end using React Native, and backend was done in an Node.js Express server (not on my github due to privacy concerns) connected to MongoDB hosted on AWS via Mongoose.
 News articles are placed into a scroll view from a self developed RSS Feed API. 
 
 ## Production timeline
