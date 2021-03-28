@@ -9,7 +9,8 @@ export async function newsFetchAPI(newsType) {
     .then((response) => response.text())
     .then((responseData) => rssParser.parse(responseData))
     .then((rss) => {
-      console.log(rss.title);
-      console.log(rss.items.length);
+      return rss;
+      // console.log(rss.title);
+      // console.log(rss.items.length);
     });
 }

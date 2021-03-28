@@ -15,10 +15,10 @@ import { newsFetchAPI } from "../helpers/newsFetcherApi";
 
 const Dashboard = ({ navigation }) => {
   const [newsType, setNewsType] = React.useState("WORLD");
-
+  const [rssFeedArray, setRssFeedArray] = React.useState([]);
   const newsTypeContext = React.useMemo(() => ({
     updateNewsType: (newsSelection) => {
-      // console.log("News Type: " + newsSelection);
+      console.log("News Type: " + newsSelection);
       setNewsType(newsSelection);
       getData();
     },
@@ -26,7 +26,20 @@ const Dashboard = ({ navigation }) => {
 
   const getData = async () => {
     try {
-      newsFetchAPI(newsType);
+      var tempRssJson;
+      var tempRssArray = [];
+      let RSS = await newsFetchAPI(newsType);
+      // console.log(RSS.items);
+      RSS.items.forEach((item) => {
+        // console.log(item.title + "\n");
+        tempRssJson = {
+          title: item.title,
+          link: item.links[0].url,
+          datePublished: item.published.slice(0, 16),
+        };
+        tempRssArray.push(tempRssJson);
+      });
+      setRssFeedArray(tempRssArray);
       console.log("Updated state: " + newsType);
     } catch (e) {
       console.warn(e);
@@ -53,8 +66,8 @@ const Dashboard = ({ navigation }) => {
             <Logo_newsfeed_small />
           </View>
           <DropDownSelector />
-          <NewsList />
         </SafeAreaView>
+        <NewsList data={rssFeedArray} />
       </BackgroundDots>
     </NewsTypeContext.Provider>
   );

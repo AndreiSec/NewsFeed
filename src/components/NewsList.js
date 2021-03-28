@@ -2,7 +2,21 @@ import React from "react";
 import { StyleSheet, SafeAreaView, Text, View, FlatList } from "react-native";
 import { theme } from "../core/theme";
 
-const NewsList = (props) => <FlatList />;
+const NewsList = (props) => (
+  <FlatList
+    data={props.data}
+    renderItem={renderItem}
+    keyExtractor={(item) => item.title}
+  />
+);
+
+const renderItem = ({ item }) => <Item title={item.title} />;
+
+const Item = ({ title }) => (
+  <View style={styles.item}>
+    <Text style={styles.title}>{title}</Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
   button: {

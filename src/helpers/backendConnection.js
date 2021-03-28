@@ -76,7 +76,7 @@ export async function logoutFunction(token) {
   console.log("In logout function token = " + token);
   const url = expressServerBase + "api/account/logout?token=" + token;
   console.log("URL: " + url);
-
+  console.log("D");
   const response = await fetch(url);
 
   const returnData = await response.json();

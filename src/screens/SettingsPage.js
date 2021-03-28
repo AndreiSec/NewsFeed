@@ -11,7 +11,6 @@ import {
   readTokenInLocalStorage,
   deleteAuthToken,
 } from "../helpers/localstorage";
-import { StatusBar } from "react-native";
 
 const SettingsPage = ({ navigation }) => {
   const { signOut } = React.useContext(AuthContext);
@@ -21,8 +20,8 @@ const SettingsPage = ({ navigation }) => {
 
     const token = JSON.stringify(await readTokenInLocalStorage());
     await logoutFunction(token);
-    deleteAuthToken();
-    signOut();
+    await deleteAuthToken();
+    await signOut();
     // nav.reset({
     //   index: 0,
     //   routes: [{ name: "StartScreen" }],

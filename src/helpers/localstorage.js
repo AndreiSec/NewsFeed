@@ -43,6 +43,7 @@ export async function deleteAuthToken() {
   }
 
   try {
+    // console.log("D");
     const value = await AsyncStorage.removeItem(key);
     return true;
   } catch (e) {
