@@ -71,7 +71,7 @@ const DropDownSelector = (props) => {
       dropDownStyle={{ backgroundColor: theme.colors.cream }}
       onChangeItem={(item) => {
         updateNewsType(item.value);
-        console.log("updated item" + item.value);
+        // console.log("updated item" + item.value);
       }}
     />
   );

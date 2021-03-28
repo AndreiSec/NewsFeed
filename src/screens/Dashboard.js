@@ -20,15 +20,15 @@ const Dashboard = ({ navigation }) => {
     updateNewsType: (newsSelection) => {
       console.log("News Type: " + newsSelection);
       setNewsType(newsSelection);
-      getData();
+      getData(newsSelection);
     },
   }));
 
-  const getData = async () => {
+  const getData = async (newsSelection) => {
     try {
       var tempRssJson;
       var tempRssArray = [];
-      let RSS = await newsFetchAPI(newsType);
+      let RSS = await newsFetchAPI(newsSelection);
       // console.log(RSS.items);
       RSS.items.forEach((item) => {
         // console.log(item.title + "\n");
@@ -48,7 +48,7 @@ const Dashboard = ({ navigation }) => {
   };
 
   useEffect(() => {
-    getData();
+    getData(newsType);
     return () => null;
   }, []);
 
