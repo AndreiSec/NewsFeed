@@ -9,11 +9,13 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { theme } from "../core/theme";
+import * as WebBrowser from "expo-web-browser";
 
 const NewsList = (props) => {
   const [selectedTitle, setSelectedTitle] = useState(null);
   const listItemSelected = (item) => {
-    console.log("PRESSED");
+    console.log("PRESSED: " + item.link);
+    WebBrowser.openBrowserAsync(item.link);
     setSelectedTitle(item.title);
   };
   const renderItem = ({ item }) => {
