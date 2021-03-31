@@ -20,6 +20,7 @@
       "supportsTablet": true
     },
     "android": {
+      "softwareKeyboardLayoutMode": "pan",
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/splash/LOGO_N_ANDROID_ICON.png",
         "backgroundColor": "#FFFFFF"

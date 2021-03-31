@@ -1,5 +1,5 @@
-import React from "react";
-import { BackgroundDots } from "../components/Background";
+import React, { useRef } from "react";
+import { DashBoardBackgroundDots } from "../components/Background";
 import Logo_N from "../components/Logo_N";
 import Header from "../components/Header";
 import Paragraph from "../components/Paragraph";
@@ -10,19 +10,27 @@ import { NewsTypeContext } from "../core/NewsTypeContext";
 import { theme } from "../core/theme";
 import DropDownSelector from "../components/DropDownPicker";
 import Logo_newsfeed_small from "../components/Logo_newsfeed_small";
-import { StatusBar } from "react-native";
+
 import { newsFetchAPI } from "../helpers/newsFetcherApi";
 
 const Dashboard = ({ navigation }) => {
   const [newsType, setNewsType] = React.useState("WORLD");
   const [rssFeedArray, setRssFeedArray] = React.useState([]);
   const newsTypeContext = React.useMemo(() => ({
-    updateNewsType: (newsSelection) => {
+    updateNewsType: async (newsSelection) => {
       console.log("News Type: " + newsSelection);
       setNewsType(newsSelection);
-      getData(newsSelection);
+      await getData(newsSelection);
+      toTop();
     },
   }));
+
+  const flatListRef = React.useRef();
+
+  const toTop = () => {
+    // use current
+    flatListRef.current.scrollToOffset({ animated: true, offset: 0 });
+  };
 
   const getData = async (newsSelection) => {
     try {
@@ -54,21 +62,15 @@ const Dashboard = ({ navigation }) => {
 
   return (
     <NewsTypeContext.Provider theme={theme} value={newsTypeContext}>
-      <StatusBar
-        barStyle="dark-content"
-        hidden={false}
-        backgroundColor={theme.colors.orange}
-        translucent={true}
-      />
-      <BackgroundDots>
+      <DashBoardBackgroundDots>
         <SafeAreaView>
           <View style={styles.bar}>
             <Logo_newsfeed_small />
           </View>
           <DropDownSelector />
         </SafeAreaView>
-        <NewsList data={rssFeedArray} />
-      </BackgroundDots>
+        <NewsList data={rssFeedArray} reference={flatListRef} />
+      </DashBoardBackgroundDots>
     </NewsTypeContext.Provider>
   );
 };

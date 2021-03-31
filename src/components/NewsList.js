@@ -34,6 +34,7 @@ const NewsList = (props) => {
   };
   return (
     <FlatList
+      ref={props.reference}
       data={props.data}
       renderItem={renderItem}
       keyExtractor={(item) => item.title}

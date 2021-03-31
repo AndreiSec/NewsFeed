@@ -19,6 +19,22 @@ const BackgroundPaper = ({ children }) => (
   </ImageBackground>
 );
 
+const DashBoardBackgroundDots = ({ children }) => (
+  <ImageBackground
+    source={require("../assets/background_dot.png")}
+    resizeMode="repeat"
+    style={styles.background}
+  >
+    <KeyboardAvoidingView
+      style={styles.container}
+      maxWidth={400}
+      behavior="padding"
+    >
+      {children}
+    </KeyboardAvoidingView>
+  </ImageBackground>
+);
+
 const BackgroundDots = ({ children }) => (
   <ImageBackground
     source={require("../assets/background_dot.png")}
@@ -42,11 +58,11 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     width: "100%",
-    maxWidth: 400,
+    maxWidth: 350,
     alignSelf: "center",
     alignItems: "center",
     justifyContent: "center",
   },
 });
 
-export { BackgroundPaper, BackgroundDots };
+export { BackgroundPaper, BackgroundDots, DashBoardBackgroundDots };

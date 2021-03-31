@@ -7,6 +7,7 @@ import { AuthContext } from "./src/core/context";
 import { AuthStackScreen, AppDrawerScreen } from "./src/core/routes";
 import { NavigationContainer } from "@react-navigation/native";
 import { useEffect } from "react";
+import { StatusBar } from "react-native";
 
 let isLoggedIn = false;
 // const Stack = createStackNavigator();
@@ -87,6 +88,12 @@ export default function App() {
   return (
     <AuthContext.Provider theme={theme} value={authContext}>
       <NavigationContainer>
+        <StatusBar
+          barStyle="dark-content"
+          hidden={false}
+          backgroundColor={theme.colors.orange}
+          translucent={true}
+        />
         {userTokenPresent ? (
           <>
             <AppDrawerScreen></AppDrawerScreen>
