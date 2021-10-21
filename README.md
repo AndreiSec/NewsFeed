@@ -15,5 +15,6 @@ News articles are placed into a scroll view from a self developed RSS Feed API.
 1. Create user interface
 2. Set up web app server and database
 3. Create Login System 
-4. Create RSS API **<------ I am here**
-5. Link API to React Native Scroll view
+4. Create RSS API 
+5. Link API to React Native Scroll view 
+6. Finish **<------ I am here**
