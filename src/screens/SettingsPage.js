@@ -11,9 +11,14 @@ import {
   readTokenInLocalStorage,
   deleteAuthToken,
 } from "../helpers/localstorage";
+import Logo_newsfeed_small from "../components/Logo_newsfeed_small";
 
 const SettingsPage = ({ navigation }) => {
   const { signOut } = React.useContext(AuthContext);
+
+  function changeUserFunction() {}
+
+  function changePassFunction() {}
 
   async function logoutButtonFunction() {
     // console.log("Token in storage:" + JSON.stringify(await readTokenInLocalStorage()))
@@ -31,13 +36,26 @@ const SettingsPage = ({ navigation }) => {
 
   return (
     <BackgroundDots>
-      <Logo_N />
+      <Logo_newsfeed_small />
       <Header>Settings</Header>
-      <Paragraph>Settings go here..</Paragraph>
+      <Button
+        mode="contained"
+        onPress={changeUserFunction}
+        color={theme.colors.grey}
+      >
+        Change username
+      </Button>
+      <Button
+        mode="contained"
+        onPress={changePassFunction}
+        color={theme.colors.orange}
+      >
+        Change password
+      </Button>
       <Button
         mode="contained"
         onPress={logoutButtonFunction}
-        color={theme.colors.orange}
+        color={theme.colors.grey}
       >
         Logout
       </Button>

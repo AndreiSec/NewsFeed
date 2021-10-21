@@ -10,7 +10,7 @@ import {
   Dashboard,
   SettingsPage,
 } from "../screens";
-import { Octicons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { theme } from "./theme";
 
@@ -61,7 +61,7 @@ export const AppDrawerScreen = () => (
       options={{
         tabBarLabel: "Dash",
         tabBarIcon: ({ color }) => (
-          <Octicons name="home" color={color} size={26} />
+          <Ionicons name="home" color={color} size={24} />
         ),
       }}
     />
@@ -71,7 +71,7 @@ export const AppDrawerScreen = () => (
       options={{
         tabBarLabel: "Dash",
         tabBarIcon: ({ color }) => (
-          <Octicons name="settings" color={color} size={26} />
+          <Ionicons name="person" color={color} size={24} />
         ),
       }}
       //   updateLoginState={props.updateLoginState}
